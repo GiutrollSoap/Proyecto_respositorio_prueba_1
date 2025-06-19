@@ -70,7 +70,7 @@ public class ZooAnimal {
     }
 
        public ZooAnimal(String AnimalId, String AnimalName, String AnimalScpecie, LocalDateTime AnimalBirtDate, AnimalZone ActualAnimalZone, boolean FisrCheckpoint) {
-          if(AnimalId !=null &&AnimalId.matches("^[A-Za-z]-//d{4}$")){
+          if(AnimalId !=null &&AnimalId.matches("^[A-Za-z]{1}-//d{4}$")){
         this.AnimalId = AnimalId;
         }
         this.AnimalName = AnimalName;
