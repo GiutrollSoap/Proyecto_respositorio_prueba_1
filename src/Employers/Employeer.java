@@ -25,7 +25,9 @@ public abstract class Employeer {
         if (BirthDate.isBefore(LocalDate.now()) && Period.between(BirthDate, LocalDate.now()).getYears() >= 18) {
         this.BirthDate = BirthDate;
     }
+        if(CelphoneNumber.matches("\\d{2}-\\d{2}-\\d{2}-\\d{2}")){
         this.CelphoneNumber = CelphoneNumber;
+    }
          if(Salary > SAlARIO_minimo || Salary == SAlARIO_minimo){
             this.Salary = Salary;
        }
@@ -38,7 +40,9 @@ public abstract class Employeer {
    }
    
     public void setCelphoneNumber(String CelphoneNumber) {
+        if(CelphoneNumber.matches("\\d{2}-\\d{2}-\\d{2}-\\d{2}")){
         this.CelphoneNumber = CelphoneNumber;
+        }
     }
 
     public void setSalary(int Salary) {
