@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Employers;
+import Utils.UtilDate;
 import java.time.LocalDate;
 import java.time.Period;
 /**
@@ -22,7 +23,7 @@ public abstract class Employeer {
     public Employeer(int Id, String CompleteName, LocalDate BirthDate, String CelphoneNumber, int Salary) {
         this.Id = Id;
         this.CompleteName = CompleteName;
-        if (BirthDate.isBefore(LocalDate.now()) && Period.between(BirthDate, LocalDate.now()).getYears() >= 18) {
+        if (UtilDate.isAdult(BirthDate)){
         this.BirthDate = BirthDate;
     }
         if(CelphoneNumber.matches("\\d{2}-\\d{2}-\\d{2}-\\d{2}")){
@@ -31,10 +32,10 @@ public abstract class Employeer {
          if(Salary > SAlARIO_minimo || Salary == SAlARIO_minimo){
             this.Salary = Salary;
        }
-    }
+    
 
    public void setBirthDate(LocalDate BirthDate) {
-    if (BirthDate.isBefore(LocalDate.now()) && Period.between(BirthDate, LocalDate.now()).getYears() >= 18) {
+     if (UtilDate.isAdult(BirthDate)){
         this.BirthDate = BirthDate;
     }
    }
